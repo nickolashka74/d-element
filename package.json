@@ -21,13 +21,18 @@
 		"gulp-rename": "latest",
 		"gulp-replace": "latest",
 		"gulp-responsive": "latest",
-		"gulp-sass": "latest",
+		"gulp-sass": "^5.0.0",
 		"gulp-ttf2woff": "latest",
 		"gulp-ttf2woff2": "latest",
 		"gulp-uglify-es": "latest",
 		"gulp-webp-css": "latest",
 		"gulp-webp-html": "latest",
 		"imagemin-webp": "latest",
-		"transform-runtime": "0.0.0"
+		"transform-runtime": "0.0.0",
+		"webp-converter": "^2.2.3"
+	},
+	"dependencies": {
+		"sass": "^1.36.0",
+		"save-dev": "0.0.1-security"
 	}
 }
