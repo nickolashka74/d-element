@@ -1,0 +1,40 @@
+.promo {
+    padding-top: 60px;
+
+    // .promo__title
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+    }
+
+    // .promo__title
+
+    &__title {
+        grid-column: 1 / 8;
+        margin-bottom: 32px;
+        font-family: "Galien";
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 1.16;
+        letter-spacing: 0.04em;
+        color: #1F3F68;
+    }
+
+    // .promo__desc
+
+    &__desc {
+        grid-column: 1 / 7;
+        margin-bottom: 71px;
+        line-height: 1.62;
+        letter-spacing: 0.05em;
+        opacity: .6;
+    }
+
+    // .promo__btn
+
+    &__btn {
+        grid-column: 1 / 4;
+    }
+}
