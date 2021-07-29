@@ -4,6 +4,14 @@
 	align-items: flex-start;
 	padding: 48px 85px;
 
+	@media (max-width: $md1 + px) {
+		padding: 24px 40px;
+	}
+
+	@media (max-width: $md3 + px) {
+		padding: 24px;
+	}
+
 	// .header__logo
 
 	&__logo {

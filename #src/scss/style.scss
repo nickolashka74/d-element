@@ -23,8 +23,8 @@ $fontFamily: "Gilroy";
 $minWidth: 360px;
 $maxWidth: 1366;
 $maxWidthContainer: 940;
-$md1: $maxWidthContainer + 12;
-$md2: 991.98;
+$md1: 991.98;
+$md2: $maxWidthContainer + 20;
 $md3: 767.98;
 $md4: 479.98;
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
@@ -54,15 +54,12 @@ body {
 .container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
-	@media (max-width: $md1+px) {
-		max-width: 970px;
-	}
 	@media (max-width: $md2+px) {
 		max-width: 750px;
 	}
 	@media (max-width: $md3+px) {
 		max-width: none;
-		padding: 0 10px;
+		padding: 0 15px;
 	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -87,7 +84,21 @@ body {
 	width: 100%;
 	height: 100vh;
 	background: linear-gradient(0deg, rgba(152, 195, 232, .2) 8.84%, rgba(152, 195, 232, 0) 31.12%),
-	url('../img/illustration.svg') no-repeat top 100px right 25%;
+				url('../img/promo/promo-bg.svg') top 100px right 25% no-repeat;
+
+	@media (max-width: 1800px) {
+		background: linear-gradient(0deg, rgba(152, 195, 232, .2) 8.84%, rgba(152, 195, 232, 0) 31.12%),
+					url('../img/promo/promo-bg.svg') top 100px right 10% no-repeat;
+	}
+
+	@media (max-width: 1400px) {
+		background: linear-gradient(0deg, rgba(152, 195, 232, .2) 8.84%, rgba(152, 195, 232, 0) 31.12%),
+					url('../img/promo/promo-bg.svg') top 100px right 0% no-repeat;
+	}
+
+	@media (max-width: 1200px) {
+		background: linear-gradient(0deg, rgba(152, 195, 232, .2) 8.84%, rgba(152, 195, 232, 0) 31.12%);
+	}
 }
 //===================================================================================================================================
 

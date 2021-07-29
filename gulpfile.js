@@ -16,7 +16,6 @@ let clean_css = require("gulp-clean-css");
 let newer = require('gulp-newer');
 
 let webp = require('imagemin-webp');
-let webpcss = require("gulp-webp-css");
 let webphtml = require('gulp-webp-html');
 
 let fonter = require('gulp-fonter');
@@ -81,12 +80,9 @@ function css() {
 			autoprefixer({
 				grid: true,
 				overrideBrowserslist: ["last 5 versions"],
-				cascade: true
+				cascade: true,
 			})
 		)
-		.pipe(webpcss(
-			['.jpg', '.jpeg', '.png']
-		))
 		.pipe(dest(path.build.css))
 		.pipe(clean_css())
 		.pipe(

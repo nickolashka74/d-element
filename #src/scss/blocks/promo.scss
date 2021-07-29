@@ -7,6 +7,18 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         column-gap: 20px;
+
+        @media (max-width: $md1 + px) {
+            column-gap: 0;
+        }
+
+        @media (max-width: $md2 + px) {
+            grid-template-columns: repeat(9, 1fr);
+        }
+
+        @media (max-width: $md3 + px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
     }
 
     // .promo__title
@@ -16,10 +28,18 @@
         margin-bottom: 32px;
         font-family: "Galien";
         font-weight: 700;
-        font-size: 64px;
+        @include adaptiv-font(64, 40);
         line-height: 1.16;
         letter-spacing: 0.04em;
         color: #1F3F68;
+
+        @media (max-width: $md2 + px) {
+            grid-column: 1 / 7;
+        }
+
+        @media (max-width: $md3 + px) {
+            grid-column: 1 / 4;
+        }
     }
 
     // .promo__desc
@@ -30,11 +50,19 @@
         line-height: 1.62;
         letter-spacing: 0.05em;
         opacity: .6;
+
+        @media (max-width: $md3 + px) {
+            grid-column: 1 / 4;
+        }
     }
 
     // .promo__btn
 
     &__btn {
         grid-column: 1 / 4;
+
+        @media (max-width: $md3 + px) {
+            grid-column: 1 / 3;
+        }
     }
 }
