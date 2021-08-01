@@ -112,6 +112,7 @@
         font-weight: 600;
         line-height: 1.5;
         letter-spacing: 0.05em;
+        text-transform: capitalize;
 
         @media (max-width: $md4 + px) {
             font-size: 18px;
