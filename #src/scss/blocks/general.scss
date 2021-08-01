@@ -1,6 +1,5 @@
 .btn {
-    max-width: 220px;
-    width: 100%;
+    width: 220px;
     padding: 15px 0;
     background: #5A98D0;
     box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
@@ -10,4 +9,26 @@
     color: #FFFFFF;
     text-transform: capitalize;
     text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+
+    &_blue {
+        color: #316099;
+    }
+}
+
+.desc {
+    line-height: 1.62;
+    letter-spacing: 0.05em;
+    opacity: .6;
+
+    &_white {
+        color: #fff;
+    }
 }

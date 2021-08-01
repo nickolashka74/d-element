@@ -55,11 +55,6 @@
 
     &__title {
         max-width: 360px;
-        font-size: 36px;
-        font-weight: 600;
-        line-height: 1.28;
-        letter-spacing: 0.05em;
-        color: #316099;
 
         @media (max-width: $md4 + px) {
             font-size: 30px;
@@ -123,9 +118,6 @@
 
     &__desc {
         margin-top: 16px;
-        line-height: 1.62;
-        letter-spacing: 0.05em;
-        opacity: 0.6;
     }
 
     // .offer__link
