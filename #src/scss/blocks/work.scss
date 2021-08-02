@@ -1,7 +1,19 @@
 .work {
+    position: relative;
     padding: 95px 0 0 7vw;
     background: #316099;
     border-radius: 0px 200px 0px 0px;
+
+    &::after {
+        content: '';
+        display: block;
+        width: calc(((100vw - 940px) / 2) + 860px);
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: rgba($color: #fff, $alpha: .4);
+    }
 
     @media (max-width: $md1 + px) {
         padding: 95px 0 0 0;
@@ -25,7 +37,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid rgba($color: #fff, $alpha: .4);
 
         @media (max-width: $md2 + px) {
             margin-right: 0;
