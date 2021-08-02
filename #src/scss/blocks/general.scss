@@ -4,7 +4,6 @@
     background: #5A98D0;
     box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
     border-radius: 10px;
-    line-height: 1.62;
     letter-spacing: 0.04em;
     color: #FFFFFF;
     text-transform: capitalize;
@@ -24,8 +23,6 @@
 }
 
 .desc {
-    line-height: 1.62;
-    letter-spacing: 0.05em;
     opacity: .6;
 
     &_white {

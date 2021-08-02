@@ -1,5 +1,129 @@
-footer{}
-//====================================================================================================
+.footer {
+    background: #316099;
+    padding: 95px 0 65px 7vw;
 
-//====================================================================================================
+    @media (max-width: $md1 + px) {
+        padding: 95px 0 65px 0;
+    }
 
+    // .footer__wrapper
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
+        justify-content: flex-start;
+        column-gap: 20px;
+
+        @media(max-width: 1200px) {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 270px));
+            justify-items: center;
+        }
+
+        @media(max-width: $md2 + px) {
+            justify-items: flex-start;
+            gap: 70px;
+        }
+    }
+
+    // .footer__column
+
+    &__column {
+        &_column2 {
+            justify-self: center;
+
+            @media(max-width: 1200px) {
+                justify-self: auto;
+            }
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        display: inline-block;
+        margin-bottom: 33px;
+    }
+
+    // .footer__title
+
+    &__title {
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 1.64;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+    }
+
+    // .footer__group
+
+    &__group {
+        display: flex;
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    // .footer__letter
+
+    &__letter {
+        margin-right: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    // .footer__address, .footer__phone, .footer__email
+
+    &__address,
+    &__phone,
+    &__email {
+        color: #FFFFFF;
+    }
+
+    // .footer__subtitle
+
+    &__subtitle {
+        margin-bottom: 32px;
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+    }
+
+    // .footer__list
+
+    &__list {
+        margin: -6px 0;
+    }
+
+    // .footer__item
+
+    &__item {
+        margin-bottom: 4px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    // .footer__link
+
+    &__link {
+        display: inline-block;
+        padding: 6px 0;
+        text-transform: capitalize;
+        color: #fff;
+    }
+
+    // .footer__copy
+
+    &__copy {
+        margin-top: 64px;
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+}

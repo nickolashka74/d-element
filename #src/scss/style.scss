@@ -35,6 +35,8 @@ body {
 	font-family: $fontFamily;
 	font-size: 16px;
 	font-weight: 400;
+	line-height: 1.62;
+	letter-spacing: 0.05em;
 	color: #1F3F68;
 	&._lock {
 		overflow: hidden;
