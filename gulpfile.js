@@ -1,4 +1,3 @@
-//let replace = require('gulp-replace'); //.pipe(replace('bar', 'foo'))
 let { src, dest } = require("gulp");
 let fs = require('fs');
 let gulp = require("gulp");

@@ -107,6 +107,10 @@ body {
 	padding-right: 7vw;
 	background: #5A98D0;
 
+	&_white {
+		background: #fff;
+	}
+
 	@media (max-width: $md1 + px) {
 		padding: 0;
 	}

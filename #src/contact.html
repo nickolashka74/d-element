@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('templates/_head.html',{
+	"title":"Afrianska - Contact US"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('templates/_header.html',{})
+
+			<section class="contacts">
+				<div class="container">
+					<div class="contacts__header">
+						<h1 class="contacts__title">Contact Us</h1>
+						<p class="contacts__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</div>
+					<div class="contacts__main">
+						<div class="contacts__column">
+							<img src="img/contacts/image.svg" alt="image" class="contacts__img">
+							<div class="contacts__group">
+								<h2 class="contacts__subtitle">address</h2>
+								<address class="contacts__address">Id convallis placerat sit sed duis id amet volutpat quam a, pharetra.</address>
+							</div>
+							<div class="contacts__group">
+								<h2 class="contacts__subtitle">phone</h2>
+								<a href="tel:+6281273134321" class="contacts__link">+62-812-7313-4321</a>
+								<a href="tel:+628170001234" class="contacts__link">+62-817-000-1234</a>
+							</div>
+							<div class="contacts__group">
+								<h2 class="contacts__subtitle">online service</h2>
+								<a href="https://afrianska.com" class="contacts__link">www.afrianska.com</a>
+								<a href="mailto:hello.afrian@gmail.com" class="contacts__link">hello.afrian@gmail.com</a>
+							</div>
+						</div>
+						<div class="contacts__column">
+							<form action="#" method="POST" class="form contacts__form">
+								<div class="form__title">send us message</div>
+								<div class="form__group">
+									<label for="" class="form__label">full name</label>
+									<input type="text" class="form__input">
+								</div>
+								<div class="form__group"></div>
+								<div class="form__group"></div>
+							</form>
+						</div>
+					</div>
+					<div class="contacts__map">
+						<img src="img/contacts/map.jpg" alt="map">
+					</div>
+				</div>
+			</section>
+
+			@@include('templates/_bottom.html',{
+				"class": " bottom_white"
+			})
+		</div>
+		@@include('templates/_popup.html',{})
+		@@include('templates/_js.html',{})
+	</body>
+</html>

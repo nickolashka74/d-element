@@ -50,8 +50,21 @@
     // .footer__logo
 
     &__logo {
+        position: relative;
         display: inline-block;
+        padding-left: 63px;
         margin-bottom: 33px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 32px;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            background: url('../img/logo-footer.svg');
+        }
 
         @media (max-width: $md3 + px) {
             margin-bottom: 25px;
