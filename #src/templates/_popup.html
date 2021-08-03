@@ -2,14 +2,22 @@
 	<div class="popup__content">
 		<div class="popup__body">
 			<div class="popup__close"></div>
-		</div>
-	</div>
-</div>
-<div class="popup popup_video">
-	<div class="popup__content">
-		<div class="popup__body">
-			<div class="popup__close popup__close_video"></div>
-			<div class="popup__video _video"></div>
+			<form action="#" method="POST" enctype="multipart/form-data" class="form contacts__form">
+				<h2 class="form__title">send us message</h2>
+				<div class="form__field">
+					<label for="username" class="form__label">full name</label>
+					<input placeholder="Your Name" type="text" id="username" name="username" class="form__input">
+				</div>
+				<div class="form__field">
+					<label for="email" class="form__label">email</label>
+					<input placeholder="Your email" type="text" id="email" name="email" class="form__input">
+				</div>
+				<div class="form__field">
+					<label for="message" class="form__label">message</label>
+					<textarea placeholder="Your message" name="message" id="message" class="form__textarea"></textarea>
+				</div>
+				<button type="submit" class="btn form__btn">submit</button>
+			</form>
 		</div>
 	</div>
 </div>

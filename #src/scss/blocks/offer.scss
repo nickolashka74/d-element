@@ -130,5 +130,9 @@
         line-height: 2.14;
         letter-spacing: 0.05em;
         color: #5A98D0;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
