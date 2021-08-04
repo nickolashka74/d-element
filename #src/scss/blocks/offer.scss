@@ -1,3 +1,33 @@
+@keyframes slideRightLine {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(10px, 0, 0);
+    }
+    75% {
+        transform: translate3d(-10px, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideRightArrow {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+    50% {
+        transform: translate3d(10px, 0, 0) rotate(45deg);
+    }
+    75% {
+        transform: translate3d(-10px, 0, 0) rotate(45deg);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+}
+
 .offer {
     padding: 180px 0;
 
@@ -123,7 +153,9 @@
     // .offer__link
 
     &__link {
+        position: relative;
         display: inline-block;
+        padding-right: 48px;
         margin-top: 32px;
         font-size: 14px;
         font-weight: 600;
@@ -131,8 +163,40 @@
         letter-spacing: 0.05em;
         color: #5A98D0;
 
+        &::before {
+            content: '';
+            position: absolute;
+            right: 4px;
+            bottom: 13px;
+            display: block;
+            width: 16px;
+            height: 2px;
+            background: #5A98D0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 4px;
+            bottom: 9px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #5A98D0;
+            border-top: 2px solid #5A98D0;
+            transform: rotate(45deg);
+        }
+
         &:hover {
             text-decoration: none;
+
+            &::before {
+                animation: slideRightLine .8s ease;
+            }
+
+            &::after {
+                animation: slideRightArrow .8s ease;
+            }
         }
     }
 }

@@ -8,6 +8,11 @@
     color: #FFFFFF;
     text-transform: capitalize;
     text-align: center;
+    transition: background 0.8s ease;
+
+    &:hover {
+        background: darken($color: #5A98D0, $amount: 10);
+    }
 }
 
 .title {
