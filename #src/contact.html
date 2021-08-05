@@ -35,22 +35,7 @@
 								</div>
 							</div>
 							<div class="contacts__column">
-								<form action="#" method="POST" enctype="multipart/form-data" class="form contacts__form">
-									<h2 class="form__title">send us message</h2>
-									<div class="form__field">
-										<label for="username" class="form__label">full name</label>
-										<input placeholder="Your Name" type="text" id="username" name="username" class="form__input">
-									</div>
-									<div class="form__field">
-										<label for="email" class="form__label">email</label>
-										<input placeholder="Your email" type="text" id="email" name="email" class="form__input">
-									</div>
-									<div class="form__field">
-										<label for="message" class="form__label">message</label>
-										<textarea placeholder="Your message" name="message" id="message" class="form__textarea"></textarea>
-									</div>
-									<button type="submit" class="btn form__btn">submit</button>
-								</form>
+								@@include('templates/_form.html',{})
 							</div>
 						</div>
 						<div class="contacts__map">
