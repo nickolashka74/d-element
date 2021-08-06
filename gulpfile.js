@@ -31,7 +31,9 @@ let path = {
 		js: project_name + "/js/",
 		css: project_name + "/css/",
 		images: project_name + "/img/",
-		fonts: project_name + "/fonts/"
+		fonts: project_name + "/fonts/",
+		php: project_name + "/",
+		phpmailer: project_name + "/phpmailer/"
 	},
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
@@ -39,7 +41,9 @@ let path = {
 		js: src_folder + "/js/app.js",
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}", "!**/favicon.*"],
-		fonts: src_folder + "/fonts/*.ttf"
+		fonts: src_folder + "/fonts/*.ttf",
+		php: src_folder + "/*.php",
+		phpmailer: src_folder + "/phpmailer/**/*"
 	},
 	watch: {
 		html: src_folder + "/**/*.html",
@@ -182,6 +186,14 @@ function fontstyle() {
 		})
 	}
 }
+function php() {
+	return src(path.src.php, {})
+		.pipe(dest(path.build.php))
+}
+function phpmailer() {
+	return src(path.src.phpmailer, {})
+		.pipe(dest(path.build.phpmailer))
+}
 function cb() { }
 function clean() {
 	return del(path.clean);
@@ -192,7 +204,7 @@ function watchFiles() {
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.images], images);
 }
-let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images), fonts, gulp.parallel(fontstyle));
+let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images), php, phpmailer, fonts, gulp.parallel(fontstyle));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.html = html;
@@ -203,6 +215,8 @@ exports.fonts_otf = fonts_otf;
 exports.fontstyle = fontstyle;
 exports.fonts = fonts;
 exports.images = images;
+exports.php = php;
+exports.phpmailer = phpmailer;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;

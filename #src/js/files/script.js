@@ -126,11 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })();
 
-    // Validation Form
+    // Send & Validation Form
 
 	const form = document.getElementById('form');
-    const popupMini = document.querySelector('.popup__mini');
-    const popupAnswer = document.querySelector('.popup__answer');
 	form.addEventListener('submit', formSend);
 
 	async function formSend(e) {
@@ -139,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		let error = formValidate(form);
 
 		let formData = new FormData(form);
-		// formData.append('image', formImage.files[0]);
 
 		if (error === 0) {
 			form.classList.add('sending');
@@ -149,10 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 			if (response.ok) {
 				let result = await response.json();
-				// alert(result.message);
-                popupAnswer.innerHTML = result;
-                popupMini.classList.add('open');
-				// formPreview.innerHTML = '';
+				alert(result.message);
 				form.reset();
 				form.classList.remove('sending');
 			} else {
@@ -202,37 +196,4 @@ document.addEventListener('DOMContentLoaded', function () {
 	function emailTest(input) {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 	}
-
-	// //Получаем инпут file в переменную
-	// const formImage = document.getElementById('formImage');
-	// //Получаем див для превью в переменную
-	// const formPreview = document.getElementById('formPreview');
-
-	// //Слушаем изменения в инпуте file
-	// formImage.addEventListener('change', () => {
-	// 	uploadFile(formImage.files[0]);
-	// });
-
-	// function uploadFile(file) {
-	// 	// провераяем тип файла
-	// 	if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-	// 		alert('Разрешены только изображения.');
-	// 		formImage.value = '';
-	// 		return;
-	// 	}
-	// 	// проверим размер файла (<2 Мб)
-	// 	if (file.size > 2 * 1024 * 1024) {
-	// 		alert('Файл должен быть менее 2 МБ.');
-	// 		return;
-	// 	}
-
-	// 	var reader = new FileReader();
-	// 	reader.onload = function (e) {
-	// 		formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-	// 	};
-	// 	reader.onerror = function (e) {
-	// 		alert('Ошибка');
-	// 	};
-	// 	reader.readAsDataURL(file);
-	// }
 });
