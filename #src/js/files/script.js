@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.querySelector('body');
     const lockPadding = document.querySelectorAll(".lock-padding");
     const curentPopup = document.querySelector('.popup');
+    const popupActive = document.querySelector('.popup.open');
 
     let unlock = true;
 
@@ -23,20 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    const popupCloseIcon = document.querySelectorAll('.popup__close');
-    if (popupCloseIcon.length > 0) {
-        for (let index = 0; index < popupCloseIcon.length; index++) {
-            const el = popupCloseIcon[index];
-            el.addEventListener('click', function (e) {
-                popupClose(el.closest('.popup'));
-                e.preventDefault();
-            });
+    function popupCloseIcon() {
+        const popupCloseIcon = document.querySelectorAll('.popup__close');
+        if (popupCloseIcon.length > 0) {
+            for (let index = 0; index < popupCloseIcon.length; index++) {
+                const el = popupCloseIcon[index];
+                el.addEventListener('click', function (e) {
+                    popupClose(el.closest('.popup'));
+                    e.preventDefault();
+                });
+            }
         }
     }
 
+    popupCloseIcon();
+
     function popupOpen(curentPopup) {
         if (curentPopup && unlock) {
-            const popupActive = document.querySelector('.popup.open');
             if (popupActive) {
                 popupClose(popupActive, false);
             } else {
@@ -98,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('keydown', function (e) {
         if (e.code === "Escape") {
-            const popupActive = document.querySelector('.popup.open');
             popupClose(popupActive);
         }
     });
@@ -142,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		let formData = new FormData(form);
 
 		if (error === 0) {
+            document.querySelector('.error_message').remove();
 			form.classList.add('sending');
 			let response = await fetch('sendmail.php', {
 				method: 'POST',
@@ -149,18 +153,26 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 			if (response.ok) {
 				let result = await response.json();
-				alert(result.message);
 				form.reset();
 				form.classList.remove('sending');
+                showResponseModal(result.message);
 			} else {
-				alert("Ошибка");
-				form.classList.remove('sending');
+                form.classList.remove('sending');
+                showResponseModal('Упс, что-то пошло не так на сервере!');
 			}
 		} else {
-			alert('Заполните обязательные поля');
+			// alert('Заполните обязательные поля');
+            requiredFields('Заполните обязательные поля');
 		}
 
 	}
+
+    function requiredFields(message) {
+        const errorMessage = document.createElement('div');
+        errorMessage.classList.add('error_message');
+        errorMessage.innerHTML = message;
+        document.querySelector('.popup__body').append(errorMessage);
+    }
 
 	function formValidate(form) {
 		let error = 0;
@@ -184,6 +196,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		return error;
 	}
+
+    function showResponseModal(message) {
+        const prevModalDialog = document.querySelector('.popup__body');
+
+        prevModalDialog.style.display = 'none';
+        popupOpen(curentPopup);
+
+        const thanksModal = document.createElement('div');
+        thanksModal.classList.add('popup__body');
+        thanksModal.innerHTML = `
+            <div class="modal__title">${message}</div>
+        `;
+        document.querySelector('.popup__content').append(thanksModal);
+
+        setTimeout(() => {
+            thanksModal.remove();
+            prevModalDialog.style.display = '';
+        }, 4000);
+    }
 
 	function formAddError(input) {
 		input.parentElement.classList.add('error');
