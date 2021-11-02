@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 showResponseModal('Упс, что-то пошло не так на сервере!');
 			}
 		} else {
-			// alert('Заполните обязательные поля');
             requiredFields('Заполните обязательные поля');
 		}
 
